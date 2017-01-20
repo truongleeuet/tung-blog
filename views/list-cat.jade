@@ -1,0 +1,21 @@
+extends layout
+
+block content
+    .container
+        a.btn.btn-default.create-post(href='/admin/create-category') Create New Category
+        table.table
+            thead
+                tr
+                th Id
+                th Title
+                th Action
+            tbody
+                -each category in categories 
+                    tr
+                        td #{category.id}
+                        td #{category.title}
+                        td 
+                            a(href='/admin/edit-cat/#{category.id}')
+                                i.fa.fa-pencil
+                            a(href='/admin/delete-cat/#{category.id}')
+                                i.fa.fa-trash

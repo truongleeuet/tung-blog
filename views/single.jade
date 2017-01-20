@@ -1,0 +1,36 @@
+extends layout
+
+block content
+  .single
+    .container
+      .single-top
+        h1 #{title}
+        a(href='#')
+          img.img-responsive(src='/pictures/#{post.picture}', alt=' ')
+        .single-grid
+          h4 #{title}
+          ul.blog-ic
+            li
+              a(href='#')
+                span
+                  i.glyphicon.glyphicon-user  
+                  | Super user
+            li
+              span
+                i.glyphicon.glyphicon-time #{moment(post.time).format('DD/MM/YYYY')}
+            li
+              span
+                i.glyphicon.glyphicon-eye-open  
+                | Hits:145
+          p #{post.content}
+        .comments
+          #fb-root
+          script.
+            (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.8&appId=1647363278828238";
+            fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+        .fb-comments(data-href='http://localhost:6868/#{post.id}', data-numposts='5' data-width='100%')

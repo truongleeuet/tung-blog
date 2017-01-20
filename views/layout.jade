@@ -1,0 +1,165 @@
+doctype html
+//
+  A Design by TungDv
+  Author: TungDv
+  Author URL: http://w3layouts.com
+  License: Creative Commons Attribution 3.0 Unported
+  License URL: http://creativecommons.org/licenses/by/3.0/
+html
+  head
+    title= title
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    meta(http-equiv='Content-Type', content='text/html; charset=utf-8')
+    meta(name='keywords', content='Coffee Break Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, \
+    Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design')
+    script(type='application/x-javascript').
+      addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); }
+    link(href='/stylesheets/bootstrap.css', rel='stylesheet', type='text/css')
+    link(href='/fonts/css/font-awesome.css', rel='stylesheet', type='text/css')
+    link(href='/stylesheets/style.css', rel='stylesheet', type='text/css')
+    script(src='/javascripts/jquery.min.js')
+    // -- start-smoth-scrolling--
+    script(type='text/javascript', src='/javascripts/move-top.js')
+    script(type='text/javascript', src='/javascripts/easing.js')
+    script(type='text/javascript').
+      jQuery(document).ready(function($) {
+      $(".scroll").click(function(event){
+      event.preventDefault();
+      $('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+      });
+      });
+    // start-smoth-scrolling
+  body
+    // header-top-starts
+    .header-top
+      .container
+        .head-main
+          a(href='/')
+            img(src='/pictures/logo-1.png', alt='')
+    // header-top-end
+    // start-header
+    .header
+      .container
+        .head
+          .navigation
+            span.menu
+            ul.navig
+              li
+                a.active(href='/') Home
+              li
+                a(href='/about') About
+              li
+                a(href='/category/cafe-exopesso') Expresso
+              li
+                a(href='/category/find-the-most') Find The Most
+              li
+                a(href='/contact') Contact
+          .header-right
+            .search-bar
+              input(type='text', value='Search', onfocus="this.value = '';", onblur="if (this.value == '') {this.value = 'Search';}")
+              input(type='submit', value='')
+            ul
+              li
+                a(href='#')
+                  span.fb  
+              li
+                a(href='#')
+                  span.twit  
+              li
+                a(href='#')
+                  span.pin  
+              li
+                a(href='#')
+                  span.rss  
+              li
+                a(href='#')
+                  span.drbl  
+          .clearfix
+    // script-for-menu
+    // script-for-menu
+    script.
+      $("span.menu").click(function(){
+      $(" ul.navig").slideToggle("slow" , function(){
+      });
+      });
+    // script-for-menu
+    // banner-starts
+    //
+      <div class="banner">
+      <div class="container">
+      <div class="banner-top">
+      <div class="banner-text">
+      <h2>Aliquam erat</h2>
+      <h1>Suspendisse potenti</h1>
+      <div class="banner-btn">
+      <a href="single.html">Read More</a>
+      </div>
+      </div>
+      </div>
+      </div>
+      </div>
+    // banner-end
+    // about-starts
+    block content
+    .slide
+      .container
+        .fle-xsel
+          ul#flexiselDemo3
+            li
+              a(href='#')
+                .banner-1
+                  img.img-responsive(src='/pictures/s-1.jpg', alt='')
+            li
+              a(href='#')
+                .banner-1
+                  img.img-responsive(src='/pictures/s-2.jpg', alt='')
+            li
+              a(href='#')
+                .banner-1
+                  img.img-responsive(src='/pictures/s-3.jpg', alt='')
+            li
+              a(href='#')
+                .banner-1
+                  img.img-responsive(src='/pictures/s-4.jpg', alt='')
+            li
+              a(href='#')
+                .banner-1
+                  img.img-responsive(src='/pictures/s-5.jpg', alt='')
+            li
+              a(href='#')
+                .banner-1
+                  img.img-responsive(src='/pictures/s-6.jpg', alt='')
+          script(type='text/javascript').
+            $(window).load(function() {
+            $("#flexiselDemo3").flexisel({
+            visibleItems: 5,
+            animationSpeed: 1000,
+            autoPlay: true,
+            autoPlaySpeed: 3000,
+            pauseOnHover: true,
+            enableResponsiveBreakpoints: true,
+            responsiveBreakpoints: {
+            portrait: {
+            changePoint:480,
+            visibleItems: 2
+            },
+            landscape: {
+            changePoint:640,
+            visibleItems: 3
+            },
+            tablet: {
+            changePoint:768,
+            visibleItems: 3
+            }
+            }
+            });
+            });
+          script(type='text/javascript', src='/javascripts/jquery.flexisel.js')
+          script(type='text/javascript', src='/javascripts/tinymce4x/tinymce.min.js')
+          script(type='text/javascript', src='/javascripts/main.js')
+          .clearfix  
+    .footer
+      .container
+        .footer-text
+          p © 2015 Coffee Break. All Rights Reserved | Design by  TungDv 
+    // footer-end

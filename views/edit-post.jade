@@ -1,0 +1,36 @@
+extends layout
+
+block content
+
+	div(class="page-header")
+		h5 Update post
+	form(class="form form-horizontal" action="/admin/edit-post?postId=#{post.id}" method="POST" enctype="multipart/form-data")
+		div(class="form-group")
+			label(class="col-sm-2 control-label") Picture
+			div(class="col-sm-6")
+				input(class="form-control" type="file" name="picture" valut="#{post.picture}")
+
+		div(class="form-group")
+			label(class="col-sm-2 control-label") Title
+			div(class="col-sm-6")
+				input(class="form-control" type="text" name="title" placeholder="Title" value="#{post.title}")
+
+		div(class="form-group")
+			label(class="col-sm-2 control-label") Teaser
+			div(class="col-sm-6")
+				textarea(class="form-control" name="teaser" placeholder="Teaser") #{post.teaser}
+
+		div(class="form-group")
+			label(class="col-sm-2 control-label") Content
+			div(class="col-sm-6")
+				textarea(class="form-control content-editor" name="content" placeholder="Content") #{post.content}
+		div(class="form-group")
+			label(class="col-sm-2 control-label") Category
+			div(class="col-sm-6")
+				select(name="category" class="form-control")
+					each category in categories
+						option(value='#{category.title}' name="category") #{category.title}
+					
+		div(class="form-group")
+			div(class="col-sm-2 col-sm-offset-2")
+				button(type="submit" class="btn btn-sm btn-primary") Update

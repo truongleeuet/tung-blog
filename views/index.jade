@@ -1,0 +1,97 @@
+extends layout
+
+block content
+  .about
+      .container
+        .about-main
+          .col-md-8.about-left
+          
+            .about-tre
+              
+               
+                .a-1
+                  - var count = 0
+                  -each post in posts 
+                    if count < 8
+                      .col-md-6.abt-left
+                        a(href='/detail/#{ functions.convertToSlug(post.title)}')
+                          img(src='/pictures/#{post.picture}', alt='')
+                        h6
+                          a(href='/category/#{ functions.convertToSlug(post.category)}') #{post.category}
+                        h3
+                          a(href='/detail/#{ functions.convertToSlug(post.title)}') #{post.title}
+                        p #{post.teaser}
+                        label Posted on: #{moment(post.time).format('DD/MM/YYYY')}
+                        - count++
+          .col-md-4.about-right.heading
+            .abt-1
+              h3 ABOUT US
+              .abt-one
+                img(src='images/c-2.jpg', alt='')
+                p
+                  | Quisque non tellus vitae mauris luctus aliquam sit amet id velit. Mauris ut dapibus nulla, a dictum neque.
+                .a-btn
+                  a(href='single.html') Read More
+            .abt-2
+              h3 YOU MIGHT ALSO LIKE
+              .might-grid
+                .grid-might
+                  a(href='single.html')
+                    img.img-responsive(src='images/c-12.jpg', alt='')
+                .might-top
+                  h4
+                    a(href='single.html') Duis consectetur gravida
+                  p
+                    | Nullam non magna lobortis, faucibus erat eu, consequat justo. Suspendisse commodo nibh odio.
+                .clearfix
+              .might-grid
+                .grid-might
+                  a(href='single.html')
+                    img.img-responsive(src='images/c-10.jpg', alt='')
+                .might-top
+                  h4
+                    a(href='single.html') Duis consectetur gravida
+                  p
+                    | Nullam non magna lobortis, faucibus erat eu, consequat justo. Suspendisse commodo nibh odio.
+                .clearfix
+              .might-grid
+                .grid-might
+                  a(href='single.html')
+                    img.img-responsive(src='images/c-11.jpg', alt='')
+                .might-top
+                  h4
+                    a(href='single.html') Duis consectetur gravida
+                  p
+                    | Nullam non magna lobortis, faucibus erat eu, consequat justo. Suspendisse commodo nibh odio.
+                .clearfix
+            .abt-2
+              h3 ARCHIVES
+              ul
+                li
+                  a(href='single.html') Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                li
+                  a(href='single.html') Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+                li
+                  a(href='single.html')
+                    | When an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                li
+                  a(href='single.html')
+                    | It has survived not only five centuries, but also the leap into electronic typesetting
+                li
+                  a(href='single.html')
+                    | Remaining essentially unchanged. It was popularised in the 1960s with the release of
+                li
+                  a(href='single.html')
+                    | Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing
+                li
+                  a(href='single.html') Software like Aldus PageMaker including versionsof Lorem Ipsum.
+            .abt-2
+              h3 NEWS LETTER
+              .news
+                form
+                  input(type='text', value='Email', onfocus="this.value = '';", onblur="if (this.value == '') {this.value = 'Email';}")
+                  input(type='submit', value='Subscribe')
+          .clearfix
+   
+
+ 

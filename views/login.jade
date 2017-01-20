@@ -1,0 +1,19 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/bootstrap.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    .container
+        p Please login below
+        form(method='post',action='/users/login')
+            .form-group
+                label User Name
+                input.form-control(name='username', type='text', placeholder='Enter User Name')
+            .form-group
+                label Password
+                input.form-control(name='password', type='password', placeholder='Enter Password')
+             input.btn.btn-default(name='submit', type='submit',value='Login')
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js")
+    script(src="/javascripts/bootstrap.js")  

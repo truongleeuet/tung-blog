@@ -1,0 +1,31 @@
+extends layout
+
+block content
+
+	div(class="page-header")
+		h5 Create a post
+
+	case status
+		when "success"
+			div(class="alert alert-success")
+				p #{message}
+
+		when "error"
+			div(class="alert alert-danger")
+				p #{message}
+
+	form(class="form form-horizontal" action="/admin/create-category" method="POST")
+
+		div(class="form-group")
+			label(class="col-sm-2 control-label") Title
+			div(class="col-sm-6")
+				input(class="form-control" type="text" name="title" placeholder="Title")
+
+		div(class="form-group")
+			label(class="col-sm-2 control-label") Description
+			div(class="col-sm-6")
+				textarea(class="form-control content-editor" name="description" placeholder="Content")
+
+		div(class="form-group")
+			div(class="col-sm-2 col-sm-offset-2")
+				button(type="submit" class="btn btn-sm btn-primary") Create
